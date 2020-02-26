@@ -1,4 +1,4 @@
-language: 'node_js'
+language: python
 python:
 - '2.7'
 node_js:
@@ -15,12 +15,10 @@ script:
 - cd ../
 - npm install
 - npm run build
-
 deploy:
 - provider: script
-  script: >-
-    cd backend;
-    sam deploy --template-file ./packaged.yaml --stack-name auth --capabilities CAPABILITY_IAM;
+  script: cd backend; sam deploy --template-file ./packaged.yaml --stack-name auth
+    --capabilities CAPABILITY_IAM;
   skip-cleanup: true
   on:
     branch: master
@@ -34,3 +32,5 @@ deploy:
 env:
   global:
   - AWS_DEFAULT_REGION=us-west-2
+  - secure: Ts+2BKy50638V5IEWwRlPtDgBZnSSZWBJ+zEdS12rvHwsYSrwiawzrtD119X3iaD85rnBmFbglR+EdxtTOtwU9Ke2XoiKs0e9It3mhA8v3G0+wQkwNsmHwlRZmRuXYECS7FCE//7tG62Ap0PLmi4OBdGC3+Ay6reBNkZveD5A3qT38IR2Gnc9sd+jshumGgRczDor8rJdgNQUCLATmbKpGyyOKqprjebDsn+11ojm6VdviVH73CLCP44dvgLn7gABxMcborcc6qazofBb4K3qcTN5A1Aa3JiweAcmHLj9er0AQXH0oZ/HD3nO6yM03vGssvPoJ6Sd1P9X0AG63MnbvITqA5XFTOb3o/yztPggbWnvTQ6pJHn2ba2gETFcp4I0kiEh0BrWCK346BQmwL9sudqIMGOttwhUWObChu2aSnFGv70HAbtNUgNs1bmvFdZeBxtjabWDkwjwEH7wa24kQGZjj5MreFH1zYGx4u6BY6NoBI/YoV54VV7U7gjqnoEJG3y90gJlCvxcMff0EPTjhpsiduKM45hrYY4VeKuoqD1HeolWxV9NFLtJEA8UCC1QjlgYGv2e4/QCdNV+/ekwqIehBHJGsduQrCgu0WUeknLh1T5+yTWuNbU7mif0cACL4ddKLFgH7yq7qyy+IM+WhEGwwmyUDpksAxgx9sDBN0=
+  - secure: mVUxVx7WeyvxVxUj/N0Peqhvx5vv31BDn1SxxjqOvzQ9OonXnj0YyXJjtPw0AVaXFaao0MCZp0rhpA0AxF9ccli3zwKhzFdzfh6L7VcHE8ydZDn3i1Y8z6YxYd0g8oB2z5B1oKlTNelc6rR9ZkedZH0gi9hie2YsBijTPo5BJmQWxeFqaKSduzA0bnQfnHhYMhFWiW0dwzaK8lkMyEZoBZHf7QWrZKbHJHTguCTT5OyxjSFZ4xe1L5hycquCKZfEnMiBa894LRY9JdAT2oPGP249CqwXKw7RoevnJ/BtXT5lKJj48Fv3hP/t8Ep/Bgf29K8yRfS7kfudSk7HZarbRde6nhPjZBs09ui+foARj1Z6tQrZTt/JlH2gzgoRfWZD19h1Qm61iLqUQd7QxpVb0zJpvvaefRtSONYGKUqX+h4Z4Cj2Y0pXDIh72AzMceIzOv/7iZtYlCvPloqB5koOJbx2ulsDxK/8KESoA17L749ZkLA4PJEU9q003HntDiW0UjvL4jTBsCjbdAETQFEnkaxBiGE+hhX2ijmtIhfE/pvrgPAbz/gH2Ye/eHNH2gBypjo2sZ2yJyiqTwLldQdINhYao+3b402Ug9M/dDWr+dC5zX4JKSrdAeOvab7X3nYkE9m/i/PSXJAROIuDUslDf7bK42Oc1ZV6GOJNXiuLEtQ=
