@@ -17,7 +17,7 @@ script:
 - npm run build
 deploy:
 - provider: script
-  script: cd backend; sam deploy --template-file ./packaged.yaml --stack-name auth
+  script: cd backend; sam deploy --template-file ./packaged.yaml --stack-name meters
     --capabilities CAPABILITY_IAM;
   skip-cleanup: true
   on:
