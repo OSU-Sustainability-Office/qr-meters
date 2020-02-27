@@ -4,7 +4,7 @@ import VueQrcodeReader from 'vue-qrcode-reader'
 import axios from 'axios'
 
 Vue.prototype.$http = axios.create({
-  baseURL: 'https://api.sustainability.oregonstate.edu/qrmeters/',
+  baseURL: 'https://api.sustainability.oregonstate.edu/v2/qrmeters/',
   timeout: 10000,
   withCredentials: true
 })
