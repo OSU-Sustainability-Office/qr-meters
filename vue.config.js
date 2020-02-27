@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: 'qr-meters'
+  publicPath: '/qr-meters'
 }
