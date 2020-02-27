@@ -71,7 +71,8 @@ export default {
       this.$http.post('/upload', formData, {
         headers: {
           'content-type': 'multipart/form-data'
-        }
+        },
+        withCredentials: true
       })
       this.picMode = false
       this.meterName = ''
