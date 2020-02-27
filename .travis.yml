@@ -4,7 +4,6 @@ python:
 node_js:
 - '10'
 install:
-- nvm install 8.10
 - pip install awscli
 - pip install aws-sam-cli
 script:
