@@ -16,10 +16,8 @@ script:
 - npm run build
 deploy:
 - provider: script
-  script: 
-  - |
-    cd backend
-    sam deploy --template-file ./packaged.yaml --stack-name meters --capabilities CAPABILITY_IAM --no-fail-on-empty-changeset
+  script: cd backend; sam deploy --template-file ./packaged.yaml --stack-name meters
+    --capabilities CAPABILITY_IAM  --no-fail-on-empty-changeset;
   skip-cleanup: true
   on:
     branch: master
